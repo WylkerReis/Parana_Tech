@@ -20,16 +20,16 @@ GET users
     [Documentation]  Testa o verbo GET do endpoint /users
     ${response}  GET  ${BASE_URL}${GET_USERS_ENDPOINT}
     Should Be Equal As Strings  ${response.status_code}  200
-    # ${schema} =   Get File   ${SCHEMA_FILE}
-    # ${schema_json} =  Evaluate  json.loads('''${schema}''')  json
-    # Validate Json By Schema    ${response.text}    ${schema}
+    ${schema} =   Get File   ${SCHEMA_FILE}
+    ${schema_json} =  Evaluate  json.loads('''${schema}''')  json
+    Validate Json By Schema    ${response.text}    ${schema}
 
 # Método PUT
 PUT users
     [Documentation]  Testa o verbo PUT do endpoint /users
     ${response}  PUT  ${BASE_URL}${PUT_USERS_ENDPOINT}
     Should Be Equal As Strings  ${response.status_code}  200
-    # Validate Json By Schema   ${response.text}    ${PUT_USERS_SCHEMA}
+    Validate Json By Schema   ${response.text}    ${PUT_USERS_SCHEMA}
 
 # Método DELETE
 DELETE users
