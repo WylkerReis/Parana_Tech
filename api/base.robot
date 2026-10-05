@@ -6,7 +6,6 @@ Resource         resources/steps/variables.robot
 
 Library          resources/inputs/inputs.py    WITH NAME     Inputs
 Library          RequestsLibrary
-Library          JSONSchemaLibrary
 Library          JSONLibrary
 
 *** Variables ***
